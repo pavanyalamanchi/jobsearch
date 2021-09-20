@@ -1,11 +1,10 @@
 import { initialState } from '../store'
 
-const rootReducer = (state = initialState.favourites, action) => {
+const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_FAVOURITE':
             return {
-                ...state,
-                companies: [...state.companies, action.payload]
+                favourites: [...state.favourites, action.payload]
             }
         default:
             return state
